@@ -37,8 +37,8 @@ class Snake(pygame.sprite.Sprite):
     def moveRight(self, pixels):
         self.rect.x += pixels
 
-        if self.rect.x > SCREEN_LENGTH - 20:
-            self.rect.x = SCREEN_LENGTH - 20
+        if self.rect.x > SCREEN_LENGTH - 17:
+            self.rect.x = SCREEN_LENGTH - 17
 
     def moveDown(self, pixels):
         self.rect.y += pixels
@@ -49,5 +49,5 @@ class Snake(pygame.sprite.Sprite):
     def moveUp(self, pixels):
         self.rect.y -= pixels
 
-        if self.rect.y < 0:
-            self.rect.y = 0
+        if self.rect.y < 52:
+            self.rect.y = 52

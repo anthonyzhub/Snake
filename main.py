@@ -27,6 +27,11 @@ def updateScreen(screen, clock, allSpritesList):
     # Draw sprites
     allSpritesList.draw(screen)
 
+    # Update score
+    font = pygame.font.Font(None, 75) # Font(union, size)
+    text = font.render(str(score), 1, WHITE) # (text, antialias, color)
+    screen.blit(text, (SCREEN_LENGTH_MID, 10)) # (text, screen location, area)
+
     # Update screen
     pygame.display.flip()
 
@@ -51,6 +56,9 @@ if __name__ == "__main__":
     
     # Initialize pygame
     pygame.init()
+
+    # Create a score
+    score = 0
 
     # Create a window
     screen = pygame.display.set_mode((SCREEN_LENGTH, SCREEN_HEIGHT))
@@ -96,6 +104,7 @@ if __name__ == "__main__":
         # If snake and fruit collide, add points and generate a new fruit
         if pygame.sprite.collide_mask(snake, fruit):
             fruit.randomPosition()
+            score += 1
 
         # Update all sprites
         allSpritesList.update()

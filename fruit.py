@@ -32,4 +32,4 @@ class Fruit(pygame.sprite.Sprite):
     def randomPosition(self):
 
         self.rect.x = randint(0, SCREEN_LENGTH-20)
-        self.rect.y = randint(0, SCREEN_HEIGHT-20)
+        self.rect.y = randint(11, SCREEN_HEIGHT-20)
