@@ -84,10 +84,18 @@ if __name__ == "__main__":
             # True, when "close window" button is closed
             if event.type == pygame.QUIT: 
                 continueGame = False
-
+        
         # Get keys pressed
         keysPressed = pygame.key.get_pressed()
         snakeMovements(keysPressed, snake)
+
+        # Quit game if "q" is pressed
+        if keysPressed[pygame.K_q]:
+            continueGame = False
+
+        # If snake and fruit collide, add points and generate a new fruit
+        if pygame.sprite.collide_mask(snake, fruit):
+            fruit.randomPosition()
 
         # Update all sprites
         allSpritesList.update()
