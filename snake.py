@@ -22,7 +22,7 @@ class Snake(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
 
     def moveLeft(self, pixels):
-        self.rext.x -= pixels
+        self.rect.x -= pixels
 
     def moveRight(self, pixels):
         self.rect.x += pixels
